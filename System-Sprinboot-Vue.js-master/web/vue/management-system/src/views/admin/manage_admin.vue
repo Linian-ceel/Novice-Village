@@ -12,10 +12,10 @@
               <i class="el-icon-edit"></i>
               新增
             </button>
-            <!-- <button class="el-button el-button--danger" @click="deleteClick($event)">
-              <i class="el-icon-delete"></i>
-              删除
-            </button> -->
+<!--               <button class="el-button el-button&#45;&#45;danger" @click="deleteClick($event)">-->
+<!--                <i class="el-icon-delete"></i>-->
+<!--                删除-->
+<!--              </button>-->
           </div>
           <el-dialog title="新增管理员" :visible.sync="AddVisible">
             <el-form :model="add_admin">
@@ -61,9 +61,9 @@
             <el-table-column type="selection" width="70"></el-table-column>
             <el-table-column prop="admin_id" label="编号" width="120"></el-table-column>
             <el-table-column prop="admin_name" label="用户名" width="170"></el-table-column>
-            <el-table-column label="上次登录时间" width="200">
-              <template slot-scope="scope">{{ scope.row.admin_time }}</template>
-            </el-table-column>
+<!--            <el-table-column label="上次登录时间" width="200">-->
+<!--              <template slot-scope="scope">{{ scope.row.admin_time }}</template>-->
+<!--            </el-table-column>-->
             <el-table-column prop="apartment" label="部门" width="170"></el-table-column>
             <el-table-column prop="position" label="职位" width="170"></el-table-column>
             <el-table-column label="操作" >

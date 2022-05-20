@@ -25,7 +25,6 @@ public class CorsConfig {
         corsConfiguration.addAllowedMethod("*");
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 
-
         return new CorsFilter(urlBasedCorsConfigurationSource);
     }
 }

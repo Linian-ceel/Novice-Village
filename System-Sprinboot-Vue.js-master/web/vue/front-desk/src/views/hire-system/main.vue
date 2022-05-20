@@ -26,11 +26,11 @@
           <el-col :span="12">
             <div class="right-search-content">
               <span>
-                <el-badge :value="23" :max="99" class="item-badge">
-                  <el-button type="text" class="top-btn" @click="turnChat">
-                    <i class="el-icon-chat-dot-round"></i>
-                  </el-button>
-                </el-badge>
+<!--                <el-badge :value="23" :max="99" class="item-badge">-->
+<!--                  <el-button type="text" class="top-btn" @click="turnChat">-->
+<!--                    <i class="el-icon-chat-dot-round"></i>-->
+<!--                  </el-button>-->
+<!--                </el-badge>-->
               </span>
               <avatar-item></avatar-item>
             </div>
@@ -77,14 +77,14 @@ export default {
           icon: 'el-icon-position',
           path: '/hire/hire_release'
         },
+        // {
+        //   index: '3',
+        //   title: '讯息 Chats',
+        //   icon: 'el-icon-chat-round',
+        //   path: '/hire/hire_chat'
+        // },
         {
           index: '3',
-          title: '讯息 Chats',
-          icon: 'el-icon-chat-round',
-          path: '/hire/hire_chat'
-        },
-        {
-          index: '4',
           title: '个人 Profile',
           icon: 'el-icon-user',
           path: '/hire/hire_profile'

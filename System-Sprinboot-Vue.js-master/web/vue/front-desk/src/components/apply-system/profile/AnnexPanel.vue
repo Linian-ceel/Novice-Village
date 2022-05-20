@@ -32,7 +32,7 @@
                 <el-button type="primary"
                            @click="handleUpload"
                            class="upload-btn" plain
-                           style="font-size: 13px; padding: 8px 60px; margin-top: 20px">
+                           style="font-size: 13px; padding: 8px 50px; margin-top: 20px">
                   上传简历
                 </el-button>
               </span>

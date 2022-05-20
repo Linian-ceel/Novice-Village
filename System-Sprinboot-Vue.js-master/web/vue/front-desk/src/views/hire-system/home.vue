@@ -12,9 +12,9 @@
           <div class="info-left-content">
             <div class="info-title">
               讯息列表 Community List
-              <span class="more-span" @click="turnToChat">
-                <el-badge is-dot class="more-item">more...</el-badge>
-              </span>
+<!--              <span class="more-span" @click="turnToChat">-->
+<!--                <el-badge is-dot class="more-item">more...</el-badge>-->
+<!--              </span>-->
             </div>
             <div class="community-list">
               <ul>
@@ -66,7 +66,8 @@ export default {
         {
           index: 0,
           icon: 'el-icon-s-custom',
-          cn_name: '总招揽人数',
+          // cn_name: '总招揽人数',
+          cn_name: '招揽人数',
           en_name: 'Recruited-Num',
           num: '0',
           path: ''
@@ -175,7 +176,7 @@ export default {
         console.log(error);
       });
 
-      
+
     //需要ehrid
 
     this.$http.get('http://localhost:8085/hire/hire_attract/'+localStorage.getItem("r_id"),{params:{

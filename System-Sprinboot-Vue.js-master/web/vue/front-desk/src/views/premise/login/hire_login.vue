@@ -9,7 +9,7 @@
       <el-col :span="15">
         <div class="right-content">
           <div class="title">
-            <span class="left-title">LOG IN</span>
+            <span class="left-title">HR端</span>
             <span class="right-title orange">'新手村'</span>
           </div>
           <div class="form">
@@ -56,9 +56,14 @@ export default {
      ...mapMutations(["changeLogin"]),
     onSubmit() {
       let v = this;
-      if (this.phone === "" || this.password === "") {
+      let reg =/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+      if (this.form.phone === "" || this.form.password === "") {
         alert("账号或密码不能为空");
-      } else {
+      }
+      else if(!reg.test(this.form.phone)){
+        alert("请输入正确的手机号");
+      }
+      else {
         const _this = this;
         this.$http
           .post("http://localhost:8085/premise/hr_login", {

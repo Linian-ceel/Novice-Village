@@ -37,6 +37,8 @@
               :total="total">
               </el-pagination>
             </div>
+<!--            total:表示显示页码总数 prev:上一页 pager:页码列表 next:下一页  :total:表示最大分页数-->
+<!--            @size-change:处理页码大小  @current-change:处理页码变动时相应的事件-->
           </div>
         </el-main>
         <el-dialog title="用户详情" :visible.sync="detailVisible">

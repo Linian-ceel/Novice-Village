@@ -6,7 +6,7 @@
           <div class="left-header">
             <span class="left-header-title">我的在线简历</span>
             <span class="left-header-btn">
-              <el-button type="text" class="header-btn">在线预览</el-button>
+<!--              <el-button type="text" class="header-btn">在线预览</el-button>-->
             </span>
           </div>
           <div class="base-info">
@@ -57,7 +57,7 @@
                         <el-radio v-model="base_info[1].c_type" :label="1" border class="info-radio2">实习</el-radio>
                         <el-radio v-model="base_info[1].c_type" :label="2" border class="info-radio2">应届</el-radio>
                         <el-radio v-model="base_info[1].c_type" :label="3" border class="info-radio2">社招</el-radio>
-                   
+
                       </li>
                     </div>
                     <div class="info-panel">
@@ -315,7 +315,7 @@
         eduVisible: false,
         messageVisible:false,
         expectVisible:false,
-        
+
         selectedOptions: [],
         // 基本信息
         base_info: [{
@@ -485,7 +485,7 @@
      // CodeToText属性是区域码，属性值是汉字 CodeToText['110000']输出北京市
      self.base_info[1].c_excity = CodeToText[cityCode];
 
- }, 
+ },
   }
 </script>
 

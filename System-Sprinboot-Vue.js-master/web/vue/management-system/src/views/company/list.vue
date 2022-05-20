@@ -16,7 +16,7 @@
         <el-table-column prop="user.phone" label="电话" width="180"></el-table-column>
         <el-table-column prop="ehr_applyaccount" label="可发布岗位" sortable width="130"></el-table-column>
         <el-table-column prop="ehr_currentaccount" label="已发布岗位" sortable width="130"></el-table-column>
-        <el-table-column prop="user.created_time" :formatter="dateFormat" label="创建日期" sortable width="180"></el-table-column>
+<!--        <el-table-column prop="user.created_time" :formatter="dateFormat" label="创建日期" sortable width="180"></el-table-column>-->
         <el-table-column fixed="right" label="操作" width="100">
           <template slot-scope="scope">
             <el-button @click="detailClick(scope.row)" type="text" size="small">详情</el-button>

@@ -9,7 +9,7 @@
       <el-col :span="15">
         <div class="right-content">
           <div class="title">
-            <span class="left-title">LOG IN</span>
+            <span class="left-title">学生端</span>
             <span class="right-title pink">'新手村'</span>
           </div>
           <div class="form">
@@ -54,36 +54,41 @@ export default {
     ...mapMutations(["changeLogin"]),
     onSubmit() {
       let v = this;
+      let reg =/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
       if (this.phone === "" || this.password === "") {
         alert("账号或密码不能为空");
-      } else {
-        const _this = this;
-        this.$http
-          .post("http://localhost:8085/premise/candidate_login", {
-            data: {
-              phone: this.phone,
-              password: this.password,
-            },
-          })
-          .then(function (res) {
-            console.log(res.data);
-            if (res.data === "账号或密码错误" || res.data === "用户不存在") {
-              alert("账号或密码错误");
-            } else {
-              v.userToken = res.data.token;
-              console.log(res.data.token);
-              // 将用户token保存到vuex中
-              v.changeLogin({ token: v.userToken });
-              localStorage.setItem("phone", v.phone);
-              v.$router.push({ path: "/index/apply_home" });
-              v.$message("登录成功");
-            }
-          })
-          .catch(function (err) {
-            console.log("err", err);
-            v.$message("密码或用户名错误");
-          });
       }
+      else if(!reg.test(this.phone)){
+        alert("请输入正确的手机号");
+      } else {
+          const _this = this;
+          this.$http
+            .post("http://localhost:8085/premise/candidate_login", {
+              data: {
+                phone: this.phone,
+                password: this.password,
+              },
+            })
+            .then(function (res) {
+              console.log(res.data);
+              if (res.data === "账号或密码错误" || res.data === "用户不存在") {
+                alert("账号或密码错误");
+              } else {
+                v.userToken = res.data.token;
+                console.log(res.data.token);
+                // 将用户token保存到vuex中
+                v.changeLogin({token: v.userToken});
+                localStorage.setItem("phone", v.phone);
+                v.$router.push({path: "/index/apply_home"});
+                v.$message("登录成功");
+              }
+            })
+            .catch(function (err) {
+              console.log("err", err);
+              v.$message("密码或用户名错误");
+            });
+
+          }
     },
     turnAnother() {
       this.$router.push({

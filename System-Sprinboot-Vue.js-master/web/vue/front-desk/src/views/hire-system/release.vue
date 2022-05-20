@@ -80,7 +80,7 @@
           </el-form>
         </el-row>
         <el-dialog width="30%" title="提示" :visible.sync="tipsVisible" append-to-body>
-          <div class="tips">确定修改么?</div>
+          <div class="tips">确定发布吗?</div>
           <div class="tips-btn">
             <el-button @click="tipsVisible = false">取 消</el-button>
             <el-button type="primary" @click="postNewPosition">确定</el-button>
@@ -294,10 +294,13 @@ export default {
           })
       .then(function (response) {
         console.log(response)
-        // _this.ehrid=response.data.list[0].ehrid;
-        // console.log( _this.ehrid);
-      for(var len = 0;len<4;len++){
-
+         _this.ehrid=response.data.list[0].ehrid;
+         console.log( _this.ehrid);
+      // for(var len = 0;len<4;len++){
+        for(var len = (_this.pageNow-1)*_this.size ;len<=_this.pageNow*_this.size-1;len++){
+          if(len>=response.data.list.length){
+            break;
+          }
         _this.table_data.push(response.data.list[len]);
         _this.table_data[len].created_time=_this.table_data[len].created_time.substring(0,10);
         }

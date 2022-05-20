@@ -248,23 +248,37 @@ export default {
   },
   methods: {
     formSubmit_1() {
-      const _this = this
-      this.$http.post('http://localhost:8085/premise/candidate_register/step_1', {
-        data:{
-        phone: this.signup.phone,
-        password: this.signup.password
-        }
-      })
-      .then(function (response) {
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      const _this = this;
+      let reg =/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+      if (this.signup.phone === "" || this.signup.password === "") {
+        alert("账号或密码不能为空");
+      }
+     //判断手机号格式是否一致
+      else if(!reg.test(this.signup.phone)){
+        alert("请输入正确的手机号");
+      }
+     //判断两次密码是否一致
+      else if(this.signup.password !== this.signup.re_password){
+        alert("两次密码不一致");
+      }
+      else {
+        this.$http.post('http://localhost:8085/premise/candidate_register/step_1', {
+          data: {
+            phone: this.signup.phone,
+            password: this.signup.password
+          }
+        })
+          .then(function (response) {
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
 
-      // 表单验证略
-      this.pageActive = this.pageActive + 1
-      // 信息上传
-      // console.log(this.signup)
+        // 表单验证略
+        this.pageActive = this.pageActive + 1
+        // 信息上传
+        // console.log(this.signup)
+      }
     },
     formSubmit_2() {
         const v = this
